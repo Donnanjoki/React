@@ -155,13 +155,89 @@ that you can change and that will persist over time
 
 }} Property Validation via PropTypes
 
-> .
+> .React class components are free to use custom properties.
 
-// A react state of mind
+> . But with this feature- you need to provide some sort of way to validate which properties you'll be using so as to prevent bugs and plan the data your components will use.
+
+> . One way of getting by this is using validators available from a namespace within React: PropTypes
+
+// The prop-types library provides a set of validators that lets you specify what your components needs or expects; Analogy: think of PropTypes as a sort of contract that can be fulfilled or broken by other developers or your future self.
+
+## Benefit of PropTypes
+
+A]] Benefit Using PropTypes is not a strict protocol but rather helps in bug prevention and ease of debugging.
+
+B]] Allows you to when you specify what props you expect first, to get a chance to think through which of your components will need to work.
+
+> . When using PropTypes you have to add the propTypes property to the React.component class via a static class property or simple property assignment after the class definition
+
+## The life and times of a Component
+
+> . Components made from React classes have backing instances that let you store data and need to have render methods that returns exactly one React Element.
+
+// Hence, React will take React elements and create an in-memory virtual DOM from them, and it will handle managing and updating the DOM.
+
+> . React classes can have some special methods that will be called in a certain order as
+
+> . React manages the virtual DOM. render, which you’ve used to return React elements, is just one of those methods.
+
+> . Additionally apart from reserved lifecycle methods, React gives you the freedom and functionality to add desired functionality.
+
+// React classes and React elements are used by React to create
+an in-memory virtual DOM that manages the real DOM. It also creates a “synthetic” event system so that you can still react to events from the browser (such as clicks, scrolls, and other user-caused events).
+
+## React state of mind
+
+> . Along with custom methods and lifecycle methods, React classes also gives you state (data) that can persist with the component(backing instance).
+
+So what is state in light terms???
+
+State is information about something at a given time.
+
+// In React state exists either as mutable or immutable.
+
+// Note: Components created as JS classes that extend React.Component may have both mutable and immutable state, whereas components created from functions(stateless functional components) only have access to immutable state(props).
+
+// You can't directly mutate "this.props" as it stems from immutable state. - Props are intended to be immutable, meaning they are passed down from parent to child components and should not be directly modified within the child component. This promotes predictable behavior and prevents unintended side effects.
+
+// In React components, this.state holds the component's internal state that can be updated to trigger re-renders.
+
+// State and props are vehicles for the data that make up your app and make it useful.
+
+// In React props and state are the primary ways that you can utilize dynamic or static data in your UI (showing user information, passing data to event handlers, and so forth).
+
+// Example:
+A]] If you’re creating a social network application (and you will in future chapters), you’ll often use a combination of props and state to build components that display and update user information, updates, and more.
+
+B]] If you’re using React for data visualization, you might use props and state as inputs for visualization libraries like D3.js.
+
+## Summary Data types in React
+
+A]] Mutable
+
+B]] Immutable
 
 // setting initial state
 
-## The life and times of a Component
+When to use state??? - when you want to make changes to data stored within a component
+
+// Note: In React, data that tends to need to be mutable often comes from or is the result of user input (often text, files, toggled options, and so on), but could be many other
+things.
+
+> > To keep track of user interactions with form elements, you need to provide an initial state and then change that state over time.
+
+// To update state within a React class component, you’ll use this.setState; look at the basic usage. It takes an updater
+function to use for updating state and doesn’t return anything:
+
+// One key difference between updating or reassigning a value in JavaScript and using setState is that React can choose to batch updates based on state changes to maximize efficiency. This means that when you call setState to perform a state update, it won’t necessarily happen right away. This is React's way of being efficient.
+
+How do events work in React??
+
+> . Javascript is event-driven;
+
+// React implements a synthetic event system as a part of the virtual DOM that will translate events in the browser into events for your React application.
+
+// One difference is that React event handlers are set up on React elements or components themselves (as opposed to using addEventListener). You can update the state of your component using the data from these events (text from an input, a radio button value, or even the target of the event).
 
 ############################ Part B ######################
 
@@ -206,4 +282,7 @@ F]] JSX is an XML-like extension of Javascript that lets you write components in
 ## Project Link
 
 Project; Letters Social component
-Link:
+Links:
+https://codesandbox.io/p/devbox/rnwvwt?file=%2Fsrc%2Findex.js%3A47%2C12
+
+https://codesandbox.io/p/devbox/rnwvwt?file=%2Findex.html%3A2%2C59
