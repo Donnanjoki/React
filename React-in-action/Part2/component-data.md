@@ -29,28 +29,28 @@ B]] Props
 
 ## State in React - Mutable state in React: Component State
 
-What is React State???
+# What is React State???
 
 > . React components can manage their own data using React's built-in state API.
 > . This differs from the general concept of state in programming.
 > . Only components inheriting from the React.Component class have access to this state API.
 
-Accessing State???
+ # Accessing State???
 
 > . State is accessed using this.state within a component
 > . this refers to the current component instance
 > . State is a special property managed by React to store data
 
-Updating State
+# Updating State
 
 > . Unlike regular properties, directly assigning a new value to this.state won't update the UI.
 > . React requires a specific way to update state to trigger a re-render of the component with the new data
 
-Using state sparingly
+# Using state sparingly
 
 > . Consider using stateless functional components or state management patterns (Redux, MobX) to minimize complexity and improve performance.
 
-Updating state
+# Updating state
 
 > . Never directly modify this.state.
 > . use the setState method to update state and trigger a re-render.
@@ -58,9 +58,11 @@ Updating state
 > . Return a new state object from the updater function.
 > . setState performs a shallow merge of the returned object with the current state.
 
-setState vs Direct Modification
+# setState vs Direct Modification
 
 > . Avoid directly modifying this.state as it can lead to unexpected behavior and debugging issues.
+
+>. A way to think about it is by treating it this.state objects as if they are immutable within your components(like props).
 
 > . setState ensures a predictable and controlled way to update state.
 
@@ -69,6 +71,8 @@ Benefits of using setState
 A]] Simplifies component structure and logic
 B]] Reduces boilerplate code for managing different states
 C]] Promotes a declarative approach to UI development
+
+
 
 ## State in React - Immutable state in React: Props
 
@@ -90,7 +94,7 @@ C]] Promotes a declarative approach to UI development
 
 ## Working with Props: PropTypes and default props
 
-... PropTypes - prop-type packages
+   # PropTypes - prop-type packages
 // Provides type checking for props during development.
 
 // Specifies expected data types and structures for props.
@@ -99,7 +103,7 @@ C]] Promotes a declarative approach to UI development
 
 // Can be used for type checking in other libraries besides React.
 
-... Setting PropTypes
+   # Setting PropTypes
 
 // Defined as a static property propTypes on the component class.
 
@@ -107,7 +111,7 @@ C]] Promotes a declarative approach to UI development
 
 // Allows specifying prop types, shapes, and requirements (optional/mandatory).
 
-.... Default Props
+   # Default Props
 
 // Defined as a static property defaultProps on the component class.
 
